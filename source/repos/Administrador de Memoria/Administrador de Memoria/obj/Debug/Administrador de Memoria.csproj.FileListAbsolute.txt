@@ -1,0 +1,10 @@
+C:\Users\patum\source\repos\Administrador de Memoria\Administrador de Memoria\bin\Debug\Administrador de Memoria.exe.config
+C:\Users\patum\source\repos\Administrador de Memoria\Administrador de Memoria\bin\Debug\Administrador de Memoria.exe
+C:\Users\patum\source\repos\Administrador de Memoria\Administrador de Memoria\bin\Debug\Administrador de Memoria.pdb
+C:\Users\patum\source\repos\Administrador de Memoria\Administrador de Memoria\obj\Debug\Administrador de Memoria.csprojResolveAssemblyReference.cache
+C:\Users\patum\source\repos\Administrador de Memoria\Administrador de Memoria\obj\Debug\Administrador_de_Memoria.Form1.resources
+C:\Users\patum\source\repos\Administrador de Memoria\Administrador de Memoria\obj\Debug\Administrador_de_Memoria.Properties.Resources.resources
+C:\Users\patum\source\repos\Administrador de Memoria\Administrador de Memoria\obj\Debug\Administrador de Memoria.csproj.GenerateResource.Cache
+C:\Users\patum\source\repos\Administrador de Memoria\Administrador de Memoria\obj\Debug\Administrador de Memoria.csproj.CoreCompileInputs.cache
+C:\Users\patum\source\repos\Administrador de Memoria\Administrador de Memoria\obj\Debug\Administrador de Memoria.exe
+C:\Users\patum\source\repos\Administrador de Memoria\Administrador de Memoria\obj\Debug\Administrador de Memoria.pdb
