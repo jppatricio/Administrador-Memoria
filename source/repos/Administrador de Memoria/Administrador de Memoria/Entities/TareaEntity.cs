@@ -9,9 +9,11 @@ namespace Administrador_de_Memoria.Entities
     class TareaEntity
     {
         private String nombreTarea;
-        private int tamañoTarea, prioridad = 0;
+        private int tamañoTarea, prioridad = 0, tiempo = 0;
         public TareaEntity(String nombreTarea, int tamañoTarea)
         {
+            Random r = new Random();
+            this.tiempo = r.Next(1, 6);
             this.nombreTarea = nombreTarea;
             this.tamañoTarea = tamañoTarea;
         }

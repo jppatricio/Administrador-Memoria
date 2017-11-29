@@ -33,7 +33,7 @@ namespace Administrador_de_Memoria
 
         private void AutomaticoBTN_Click(object sender, EventArgs e)
         {
-            
+            timer1.Start();
             
             if (tareasTB.Text == "")
                 tareasTB.Text = "10";
@@ -41,25 +41,12 @@ namespace Administrador_de_Memoria
             
             Random r = new Random();
             int i = 1;
-            //do
-            //{
-                //DelayAsync();
-                TareaEntity t = new TareaEntity("T1", r.Next(250));
-                i++;
-                ctrl.AgregarElementoTabAreas(this.TablaA, t);
-                
-            //} while (!stop);
-            //Particion p = new Particion();
-            //ctrl.AgregarElementoTabPart(p, TablaP);
 
-           
+            TareaEntity t = new TareaEntity("T1", r.Next(250));
+            i++;
+            ctrl.AgregarElementoTabAreas(this.TablaA, t);
 
 
-
-        }
-        private async Task DelayAsync()
-        {
-            await Task.Delay(3000);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -69,6 +56,8 @@ namespace Administrador_de_Memoria
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if (stop == true)
+                timer1.Stop();// Detiene el programa
 
         }
     }
