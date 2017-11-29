@@ -18,6 +18,10 @@ namespace Administrador_de_Memoria.Entities
             this.tamañoTarea = tamañoTarea;
         }
 
+        public TareaEntity()
+        {
+        }
+
         public String GetNombreTarea() => this.nombreTarea;
         public void SetNombreTarea(String nombreTarea) => this.nombreTarea = nombreTarea;
 

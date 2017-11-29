@@ -19,6 +19,10 @@ namespace Administrador_de_Memoria.Entities
             this.proceso = proceso;
             this.estado = estado;
         }
+        public Particion()
+        {
+
+        }
         
     }
 }
