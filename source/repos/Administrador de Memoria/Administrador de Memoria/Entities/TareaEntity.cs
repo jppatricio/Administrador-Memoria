@@ -10,6 +10,7 @@ namespace Administrador_de_Memoria.Entities
     {
         private String nombreTarea;
         private int tamañoTarea, prioridad = 0, tiempo = 0;
+        private int yPos = 0;
         public TareaEntity(String nombreTarea, int tamañoTarea)
         {
             Random r = new Random();
@@ -21,6 +22,12 @@ namespace Administrador_de_Memoria.Entities
         public TareaEntity()
         {
         }
+
+        public int GetTiempo() => this.tiempo;
+        public void SetTiempo(int tiempo) => this.tiempo = tiempo;
+
+        public int GetYPos() => this.yPos;
+        public void SetYPos(int yPos) => this.yPos = yPos;
 
         public String GetNombreTarea() => this.nombreTarea;
         public void SetNombreTarea(String nombreTarea) => this.nombreTarea = nombreTarea;
