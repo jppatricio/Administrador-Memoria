@@ -56,7 +56,7 @@ namespace Administrador_de_Memoria
 
                 Random r = new Random();
 
-                TareaEntity t = new TareaEntity("T" + i, r.Next(250));
+                TareaEntity t = new TareaEntity("T" + i, r.Next(1,250));
                 i++;
                 ColaElement c = ctrl.AgregarElementoTabAreas(this.TablaA, t);
                 if(c.te.GetPrioridad() != 0)
@@ -129,7 +129,7 @@ namespace Administrador_de_Memoria
 
                 Random r = new Random();
 
-                TareaEntity t = new TareaEntity("T" + i, r.Next(250));
+                TareaEntity t = new TareaEntity("T" + i, r.Next(1,250));
                 i++;
                 if(freeQueue == true)
                 {
@@ -146,7 +146,7 @@ namespace Administrador_de_Memoria
                     ctrlqueue.Enqueue1(this.Cola1tbl, c);
                 }
 
-                //ctrl.ModAreaPart(this.TablaA);
+                ctrl.ModAreaPart(this.TablaA);
                 //timeInt++;
             }
         }
@@ -177,7 +177,7 @@ namespace Administrador_de_Memoria
 
             List<TareaEntity> listTE = ctrl.QuitarDeMemoria(this.splitter1);//Actualiza Memoria
             ctrl.DejarVacioElementoTabPart(TablaP,listTE);
-
+            //ctrl.ModAreaPart(this.TablaA);
         }
 
         private void AddTime()//para medir tiempo transcurrido

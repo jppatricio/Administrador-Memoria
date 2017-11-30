@@ -75,7 +75,6 @@ namespace Administrador_de_Memoria
                             break;
                         }
                     }
-
                     if (prueba.tam == tarea.GetTamañoTarea())
                     {
                         llArea.AddAfter(llArea.Find(prueba), new LinkedListNode<Area>(new Area(x, tarea.GetTamañoTarea(), prueba.dir, "A", tarea)));
@@ -131,21 +130,34 @@ namespace Administrador_de_Memoria
 
         public void ModAreaPart(TableLayoutPanel t)
         {
-            int axelesgay = 0;
+            int cambios = 0;
             List<Area> arealist = new List<Area>();
             foreach(Particion p in llPart)
             {
-                if(p.estado == "V")
+                if (p.estado == "V")
                 {
+                    cambios = 1;
                     foreach (Area a2 in llArea)
                     {
-                        if (a2.dir >= p.dir && a2.dir <= p.tam + p.dir)
+                        if (a2.dir >= p.dir && a2.dir < p.tam + p.dir)
                             arealist.Add(a2);
                     }
+
+                    //DejarVacioElementoTabAreas(t, p.dir);
+                    //ActualizarTabla(t);
+                    Area a = new Area();
+                    a.dir = p.dir;
+                    a.estado = p.estado;
+                    a.num = p.num;
+                    a.tam = p.tam;
+                    llArea.AddLast(a);
+
                     foreach (Area a2 in arealist)
                     {
+
                         Console.WriteLine(llArea.Remove(a2));
-                        llArea.Remove(a2);
+                        if (a2.estado == "A")
+                            llArea.Remove(a2);
                     }
                 }
                 //if (p.estado == "V")
@@ -155,7 +167,7 @@ namespace Administrador_de_Memoria
                 //        {
                 //            a.t.SetTamañoTarea(p.tam);
                 //            a.tam = p.tam;
-                //            axelesgay = 1;
+                //            alv = 1;
                 //            foreach (Area a2 in llArea)
                 //            {
                 //                if (a2 != a)
@@ -173,9 +185,13 @@ namespace Administrador_de_Memoria
                 //            break;
                 //        }
                 //    }
-                if (axelesgay == 1)
+                if (cambios == 1)
+                {
                     DejarVacioElementoTabAreas(t, p.dir);
-                axelesgay = 0;
+                    ActualizarTabla(t);
+                }
+
+                cambios = 0;
             }
         }
 
@@ -189,7 +205,6 @@ namespace Administrador_de_Memoria
                 if (node.Value.dir == dirInicio)
                 {
                     prueba = node.Value;
-                    break;
                 }
             }
             if (prueba == null)
@@ -421,17 +436,9 @@ namespace Administrador_de_Memoria
                 if (node.Value.estado == "V" && node.Next != null && node.Next.Value.estado == "V")
                 {
                     node.Value.proceso = "NADA";
-                    if (node == llPart.First)
-                    {
-                        node.Value.tam = node.Value.tam + llPart.First.Next.Value.tam;
-                        llPart.Remove(llPart.First.Next);
-                    }
-                    else
-                    {
-                        node.Value.tam = node.Value.tam + node.Next.Value.tam;
-                        llPart.Remove(node.Next);
-                        //Console.WriteLine(node.Next.Value.proceso + " | " + node.Next.Value.dir);
-                    }
+                    node.Value.tam = node.Value.tam + node.Next.Value.tam;
+                    llPart.Remove(node.Next);
+                    //Console.WriteLine(node.Next.Value.proceso + " | " + node.Next.Value.dir);
                 }
             }
             foreach (Particion a in llPart)
